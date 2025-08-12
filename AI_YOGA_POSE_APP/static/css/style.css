@@ -1,0 +1,189 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container, .coach-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Landing Page */
+.poses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.pose-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pose-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.pose-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* Coaching Interface */
+.coach-wrapper {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-container {
+    flex: 3;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+video, canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.feedback-panel {
+    flex: 2;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 1.5rem;
+}
+
+.pose-display, .feedback-section, .pose-guidance {
+    margin-bottom: 1.5rem;
+}
+
+.confidence-meter {
+    height: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.confidence-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff4e50 0%, #f9d423 100%);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Buttons */
+button {
+    background: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    background: #FF8E8E;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+#back-btn {
+    background: #4ECDC4;
+}
+
+/* Feedback styling */
+.feedback-section li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    list-style: none;
+}
+
+.deviation {
+    color: #FF6B6B;
+    font-weight: bold;
+    margin: 0 8px;
+}
+
+.instruction {
+    color: #4ECDC4;
+    font-style: italic;
+}
+
+.pose-guidance {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.input_video {
+    display: none;
+}
+
+.output_canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Add to existing style.css */
+.video-container {
+    position: relative;
+    background: #000;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.output_canvas {
+    transform: scaleX(-1); /* Mirror effect */
+}
+
+#feedback-list {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Loading state */
+#pose-result[data-status="loading"]::after {
+    content: '...';
+    animation: loading 1s infinite;
+}
+
+@keyframes loading {
+    0% { content: '.'; }
+    33% { content: '..'; }
+    66% { content: '...'; }
+}

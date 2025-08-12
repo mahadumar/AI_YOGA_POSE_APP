@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Yoga Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils/control_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+</head>
+<body>
+    <div class="coach-container">
+        <h1>AI Yoga Pose Coach</h1>
+        <div class="coach-wrapper">
+            <div class="video-container">
+                <video class="input_video"></video>
+                <canvas class="output_canvas" width="1280" height="720"></canvas>
+            </div>
+            <div class="feedback-panel">
+                <div class="pose-display">
+                    <h2>Current Pose: <span id="pose-result">Waiting...</span></h2>
+                    <div class="confidence-meter">
+                        <div class="confidence-fill"></div>
+                    </div>
+                </div>
+                <div class="feedback-section">
+                    <h3>Improvement Tips:</h3>
+                    <ul id="feedback-list"></ul>
+                </div>
+                <div class="pose-guidance">
+                    <h3>Perfect Your Pose:</h3>
+                    <div id="pose-instructions"></div>
+                </div>
+            </div>
+        </div>
+        <button id="back-btn" onclick="location.href='/'">Back to Poses</button>
+    </div>
+    
+    <!-- Load scripts in correct order -->
+    <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/webcam.js') }}"></script>
+    
+    <script>
+        // Debugging
+        console.log("Feedback functions available:", window.analyzePose ? "Yes" : "No");
+    </script>
+</body>
+</html>

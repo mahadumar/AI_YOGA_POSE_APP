@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Yoga Pose Coach</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Yoga Pose Master</h1>
+        <div class="poses-grid">
+            {% for key, value in poses.items() %}
+            <div class="pose-card">
+                <div class="pose-icon">{{ key[0] }}</div>
+                <h3>{{ value }}</h3>
+                <p>Perfect your {{ value }} with real-time AI feedback</p>
+            </div>
+            {% endfor %}
+        </div>
+        <button id="start-btn" onclick="location.href='/coach'">Start Live Coaching</button>
+    </div>
+</body>
+</html>
