@@ -17,7 +17,7 @@ An intelligent web application that provides real-time feedback on yoga poses us
 - Confidence-based pose prediction
 - Beautiful responsive interface
 
-## 🛠 Technologies Used
+##  Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: Python Flask
