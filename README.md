@@ -6,9 +6,10 @@
 
 An intelligent web application that provides real-time feedback on yoga poses using computer vision and machine learning.
 
-![Demo Screenshot](https://via.placeholder.com/800x500.png?text=AI+Yoga+Pose+Coach+Demo)
+<img width="1875" height="920" alt="image" src="https://github.com/user-attachments/assets/83888942-c2ca-4e7a-bfe4-66231e072a0b" />
 
-## ✨ Features
+
+##  Features
 
 - Real-time pose detection using MediaPipe
 - 8 supported yoga poses with customized feedback
@@ -16,16 +17,16 @@ An intelligent web application that provides real-time feedback on yoga poses us
 - Confidence-based pose prediction
 - Beautiful responsive interface
 
-## 🛠️ Technologies Used
+## 🛠 Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Backend**: Python Flask
 - **Computer Vision**: MediaPipe Pose Estimation
 - **Machine Learning**: Scikit-learn RandomForestClassifier
 
-## 📦 Installation
+##  Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/ai-yoga-pose-coach.git
-   cd ai-yoga-pose-coach
+   git clone https://github.com/mahadumar/AI_YOGA_POSE_APP.git
+   cd AI_YOGA_POSE_APP
